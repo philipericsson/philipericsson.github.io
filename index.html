@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philip Ericsson</title>
+    <style>
+      @font-face {
+        font-family: 'NeueMontreal-book';
+        src: url('fonts/ppneuemontreal-book.otf') format('opentype');
+      }
+
+      @font-face {
+        font-family: 'NeueMontreal-medium';
+        src: url('fonts/ppneuemontreal-medium.otf') format('opentype');
+      }
+
+        body {
+            margin: 5vw; /* Set the margin to 5% of the viewport width */
+            padding: 0vw;
+            background-color: #FAF9F6; /* off-white background color */
+        }
+
+        .intro-container {
+          display: flex;
+          max-width: 60vw;
+          margin-left: 4rem; /* Reset margin to eliminate any default spacing */
+          padding: 0; /* Reset padding to eliminate any default spacing */
+          border: none; /* Reset border to eliminate any default border */
+          outline: none; /* Reset outline to eliminate any default outline */
+          box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        p#intro_paragraph {
+            line-height: 1.6;
+            padding: 0;
+            font-size: 2.8rem;
+            margin: 0; /* Reset margin to eliminate any default spacing */
+            font-family: 'NeueMontreal-medium'; /* Use the custom font as the primary font with a fallback to sans-serif */
+        }
+
+        .select-projects {
+          display: flex;
+          margin-left: 4rem; /* Reset margin to eliminate any default spacing */
+          padding-top: 4rem; /* Reset padding to eliminate any default spacing */
+          border: none; /* Reset border to eliminate any default border */
+          outline: none; /* Reset outline to eliminate any default outline */
+          box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        p#select_projects {
+          font-family: 'NeueMontreal-book';
+          font-size: 1.2rem;
+        }
+
+        /* Apply the same styling as select-projects for project rows */
+        .project-row-first {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-left: 4rem;
+            padding-top: 0rem;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+        } 
+        
+        .project-row {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-left: 4rem;
+            padding-top: 4rem;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .project-title {
+            font-family: 'NeueMontreal-book';
+            font-size: 1.2rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            margin-top: 1rem;
+            width: 100%; /* Set the width to 100% */
+        }
+        /* Hover effect */
+        .project-row:hover {
+            background-color: #AFEEEE; /* Change background color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="intro-container">
+      <p id="intro_paragraph">Philip Ericsson is a software engineer with a passion for sustainable & minimalistic product design. Native Swede, Palo Alto raised, Cornellian.</p>
+    </div>
+    <div class="select-projects">
+      <p id="select_projects">SELECT PROJECTS</p>
+    </div>
+
+    <div class="project-row-first">
+    </div>
+
+    <div class="line"></div>
+    <div class="project-row">
+      <p class="project-title">World's first high performance electric boat</p>
+    </div>
+    <div class="line"></div>
+
+    <div class="project-row">
+      <p class="project-title">26 foot electric daycruiser</p>
+    </div>
+    <div class="line"></div>
+
+    <div class="project-row">
+      <p class="project-title">Spittin' Bars: Fine-tuning Large Language Models for Lyric Generation</p>
+    </div>
+    <div class="line"></div>
+
+    <div class="project-row">
+      <p class="project-title">EV Range Visualizer using Google Maps API</p>
+    </div>
+    <div class="line"></div>
+
+    <div class="project-row">
+      <p class="project-title">Credit Risk model assessment using Machine Learning and Reject Inference</p>
+    </div>
+    <div class="line"></div>
+
+</body>
+</html>

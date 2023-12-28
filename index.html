@@ -9,22 +9,34 @@
         font-family: 'NeueMontreal-book';
         src: url('fonts/ppneuemontreal-book.otf') format('opentype');
       }
-
       @font-face {
         font-family: 'NeueMontreal-medium';
         src: url('fonts/ppneuemontreal-medium.otf') format('opentype');
+      }
+      @font-face {
+        font-family: 'Kalnia-Light';
+        src: url('fonts/Kalnia-Light.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'PlayfairDisplay-Regular';
+        src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'Quicksand-Light';
+        src: url('fonts/Quicksand-Light.ttf') format('truetype');
       }
 
         body {
             margin: 5vw; /* Set the margin to 5% of the viewport width */
             padding: 0vw;
-            background-color: #FAF9F6; /* off-white background color */
+            /* background-color: #FAF9F6; off-white background color */
+            background-color: #FFFFFF;
         }
 
         .intro-container {
           display: flex;
-          max-width: 60vw;
-          margin-left: 4rem; /* Reset margin to eliminate any default spacing */
+          max-width: 62vw;
+          margin-left: 2rem; /* Reset margin to eliminate any default spacing */
           padding: 0; /* Reset padding to eliminate any default spacing */
           border: none; /* Reset border to eliminate any default border */
           outline: none; /* Reset outline to eliminate any default outline */
@@ -32,24 +44,26 @@
         }
 
         p#intro_paragraph {
-            line-height: 1.6;
+            line-height: 1.4;
             padding: 0;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             margin: 0; /* Reset margin to eliminate any default spacing */
-            font-family: 'NeueMontreal-medium'; /* Use the custom font as the primary font with a fallback to sans-serif */
+            /* font-family: 'NeueMontreal-medium'; Use the custom font as the primary font with a fallback to sans-serif */
+            /* font-family: 'Kalnia-Light'; */
+            font-family: 'Quicksand-Light';
         }
 
         p#second_paragraph {
-            line-height: 1.6;
+            line-height: 1.4;
             padding: 0;
-            font-size: 2.8rem;
-            margin-top: 4rem; /* Reset margin to eliminate any default spacing */
-            font-family: 'NeueMontreal-medium'; /* Use the custom font as the primary font with a fallback to sans-serif */
+            font-size: 2.6rem;
+            margin-top: 6rem;
+            font-family: 'Quicksand-Light';
         }
 
         .select-projects {
           display: flex;
-          margin-left: 4rem; /* Reset margin to eliminate any default spacing */
+          margin-left: 2rem; /* Reset margin to eliminate any default spacing */
           padding-top: 4rem; /* Reset padding to eliminate any default spacing */
           border: none; /* Reset border to eliminate any default border */
           outline: none; /* Reset outline to eliminate any default outline */
@@ -57,27 +71,28 @@
         }
 
         p#select_projects {
-          font-family: 'NeueMontreal-book';
+          /* font-family: 'NeueMontreal-book'; */
+          font-family: 'NeueMontreal-medium';
           font-size: 1.2rem;
         }
 
         /* Apply the same styling as select-projects for project rows */
-        .project-row-first {
+        /* .project-row-first {
             position: relative;
             display: flex;
             flex-direction: column;
-            margin-left: 4rem;
+            margin-left: 2rem;
             padding-top: 0rem;
             border: none;
             outline: none;
             box-sizing: border-box;
-        } 
+        }  */
         
         .project-row {
             position: relative;
             display: flex;
             flex-direction: column;
-            margin-left: 4rem;
+            margin-left: 2rem;
             padding-top: 4rem;
             border: none;
             outline: none;
@@ -100,17 +115,21 @@
             border-bottom: 1px solid #000;
             margin-top: 1rem;
             width: 100%; /* Set the width to 100% */
+            z-index: 0; /* Set a lower z-index value */
         }
 
         /* New styles for image container */
         .image-container {
           position: absolute;
-          top: -70%;
+          top: -80%;
           right: 15%;
-          width: 20%; /* Adjust the width as needed */
-          height: auto; 
+          /* width: 18%; Adjust the width as needed */
+          width: 280px;
+          /* height: auto;  */
+          height: 320px;
           overflow: hidden;
           display: none; /* Initially hide the image container */
+          z-index: 1; /* Set a higher z-index value */
         }
 
         .project-row:hover {
@@ -127,54 +146,83 @@
           height: 100%;
           object-fit: cover;
         }
-
     </style>
 </head>
 <body>
     <div class="intro-container">
-      <p id="intro_paragraph">Philip Ericsson is a software engineer with a passion for sustainable & minimalistic product design. Native Swede, Palo Alto raised, Cornellian.</p>
+      <p id="intro_paragraph">Philip Ericsson is a software engineer with a passion for sustainable & minimalistic product design. <br> Native Swede, Palo Alto raised, Cornellian.</p>
     </div>
     <div class="select-projects">
-      <p id="select_projects">SELECT PROJECTS</p>
-    </div>
-
-    <div class="project-row-first">
+      <p id="select_projects">PRODUCT ENGINEERING</p>
     </div>
 
     <div class="line"></div>
     <div class="project-row">
       <p class="project-title">World's first high performance electric boat</p>
       <div class="image-container">
-        <img class="project-image" src="images/chair.jpeg" alt="Project Image 1">
+        <img class="project-image" src="images/grapefruit.jpg" alt="Project Image 1">
       </div>
     </div>
     <div class="line"></div>
 
     <div class="project-row">
       <p class="project-title">26 foot electric daycruiser</p>
+      <div class="image-container">
+        <img class="project-image" src="images/lollipop.jpg" alt="Project Image 1">
+      </div>
     </div>
     <div class="line"></div>
 
-    <div class="project-row">
-      <p class="project-title">Fine-tuning LLM for song lyrics</p>
+    <div class="select-projects">
+      <p id="select_projects">DESIGN</p>
     </div>
-    <div class="line"></div>
 
+    <div class="line"></div>
     <div class="project-row">
       <p class="project-title">EV range visualizer using Google Maps API</p>
+      <div class="image-container">
+        <img class="project-image" src="images/justglobe.jpg" alt="Project Image 1">
+      </div>
+    </div>
+    <div class="line"></div>
+
+    <div class="project-row">
+      <p class="project-title">Critical design on organ donation</p>
+      <div class="image-container">
+        <img class="project-image" src="images/lollipop.jpg" alt="Project Image 1">
+      </div>
+    </div>
+    <div class="line"></div>
+
+    <div class="select-projects">
+      <p id="select_projects">DATA SCIENCE & MACHINE LEARNING</p>
+    </div>
+    
+    <div class="line"></div>
+    <div class="project-row">
+      <p class="project-title">Fine-tuning LLM for song lyrics</p>
+      <div class="image-container">
+        <img class="project-image" src="images/guitar.jpg" alt="Project Image 1">
+      </div>
+    </div>
+    <div class="line"></div>
+
+    <!-- <div class="project-row-first">
+    </div> -->
+
+    <div class="project-row">
+      <p class="project-title">Wine rating prediction using ML</p>
+      <div class="image-container">
+        <img class="project-image" src="images/grapes.jpg" alt="Project Image 1">
+      </div>
     </div>
     <div class="line"></div>
 
     <div class="project-row">
       <p class="project-title">Credit risk model assessment using ML</p>
       <div class="image-container">
-        <img class="project-image" src="images/chair.jpeg" alt="Project Image 1">
+        <img class="project-image" src="images/purplebubbles.jpg" alt="Project Image 1">
       </div>
-    </div>
-    <div class="line"></div>
-
-    <div class="project-row">
-      <p class="project-title">Wine rating prediction using ML</p>
     </div>
     <div class="line"></div>
 

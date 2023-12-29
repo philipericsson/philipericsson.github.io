@@ -14,14 +14,6 @@
         src: url('fonts/ppneuemontreal-medium.otf') format('opentype');
       }
       @font-face {
-        font-family: 'Kalnia-Light';
-        src: url('fonts/Kalnia-Light.ttf') format('truetype');
-      }
-      @font-face {
-        font-family: 'PlayfairDisplay-Regular';
-        src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
-      }
-      @font-face {
         font-family: 'Quicksand-Light';
         src: url('fonts/Quicksand-Light.ttf') format('truetype');
       }
@@ -48,8 +40,6 @@
             padding: 0;
             font-size: 2.6rem;
             margin: 0; /* Reset margin to eliminate any default spacing */
-            /* font-family: 'NeueMontreal-medium'; Use the custom font as the primary font with a fallback to sans-serif */
-            /* font-family: 'Kalnia-Light'; */
             font-family: 'Quicksand-Light';
         }
 
@@ -59,6 +49,52 @@
             font-size: 2.6rem;
             margin-top: 6rem;
             font-family: 'Quicksand-Light';
+        }
+        
+        .squiggle-word {
+          position: relative;
+          display: inline-block;
+          text-decoration: none;
+          color: inherit; /* Set the initial text color */
+        }
+
+        .squiggle-word a {
+          color: inherit; /* Inherit the text color */
+          text-decoration: none; /* Remove underline */
+        }
+
+        .squiggle-word:hover::after {
+          animation: shift 2s linear infinite;
+          background-position: 0 100%;
+          opacity: 0.7;
+        }
+
+        .squiggle-word:hover {
+          cursor: pointer;
+          color: #888; /* Change text color to red on hover */
+        }
+
+        .squiggle-word::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 6px;
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:none;}%3C/style%3E%3Cpath fill='none' stroke='%23AFEEEE' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+          background-position: 100% 100%;
+          background-size: auto 6px;
+          background-repeat: repeat-x;
+        }
+
+
+        @keyframes shift {
+          from {
+            background-position: 100% 100%;
+          }
+          to {
+            background-position: 0 100%;
+          }
         }
 
         .select-projects {
@@ -75,18 +111,6 @@
           font-family: 'NeueMontreal-medium';
           font-size: 1.2rem;
         }
-
-        /* Apply the same styling as select-projects for project rows */
-        /* .project-row-first {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            margin-left: 2rem;
-            padding-top: 0rem;
-            border: none;
-            outline: none;
-            box-sizing: border-box;
-        }  */
         
         .project-row {
             position: relative;
@@ -150,8 +174,12 @@
 </head>
 <body>
     <div class="intro-container">
-      <p id="intro_paragraph">Philip Ericsson is a software engineer with a passion for sustainable & minimalistic product design. <br> Native Swede, Palo Alto raised, Cornellian.</p>
+      <p id="intro_paragraph">
+        <span class="squiggle-word"><a href="https://www.linkedin.com/in/philipericsson/" target="_blank">Philip Ericsson </a></span> is a software engineer with a passion for sustainable & minimalistic product design. <br> Native Swede, Palo Alto raised, Cornellian.
+      </p>
     </div>
+
+
     <div class="select-projects">
       <p id="select_projects">PRODUCT ENGINEERING</p>
     </div>
@@ -206,9 +234,6 @@
       </div>
     </div>
     <div class="line"></div>
-
-    <!-- <div class="project-row-first">
-    </div> -->
 
     <div class="project-row">
       <p class="project-title">Wine rating prediction using ML</p>

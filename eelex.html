@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philip Ericsson</title>
+    <style>
+      @font-face {
+        font-family: 'NeueMontreal-book';
+        src: url('fonts/ppneuemontreal-book.otf') format('opentype');
+      }
+      @font-face {
+        font-family: 'NeueMontreal-medium';
+        src: url('fonts/ppneuemontreal-medium.otf') format('opentype');
+      }
+      @font-face {
+        font-family: 'Quicksand-Light';
+        src: url('fonts/Quicksand-Light.ttf') format('truetype');
+      }
+
+      body {
+        padding: 0vw;
+        background-color: #FFFFFF;
+      }
+
+      .intro-logo {
+        display: flex;
+        max-width: 62vw;
+        margin-top: 2rem;
+        margin-left: 3rem; /* Reset margin to eliminate any default spacing */
+        padding: 0; /* Reset padding to eliminate any default spacing */
+        border: none; /* Reset border to eliminate any default border */
+        outline: none; /* Reset outline to eliminate any default outline */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      }
+
+      .intro-container {
+        display: flex;
+        max-width: 62vw;
+        margin-left: 3rem; /* Reset margin to eliminate any default spacing */
+        padding: 0; /* Reset padding to eliminate any default spacing */
+        border: none; /* Reset border to eliminate any default border */
+        outline: none; /* Reset outline to eliminate any default outline */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      }
+
+      p#intro_paragraph {
+        line-height: 1.4;
+        padding: 0;
+        font-size: 2.6rem;
+        margin: 0; /* Reset margin to eliminate any default spacing */
+        font-family: 'Quicksand-Light';
+      }
+
+      p#second_paragraph {
+        line-height: 1.4;
+        padding: 0;
+        font-size: 2.6rem;
+        margin: 0;
+        font-family: 'Quicksand-Light';
+      }
+
+      .squiggle-word {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: inherit; /* Set the initial text color */
+      }
+
+      .squiggle-word a {
+        color: inherit; /* Inherit the text color */
+        text-decoration: none; /* Remove underline */
+      }
+
+      .squiggle-word:hover::after {
+        animation: shift 2s linear infinite;
+        background-position: 0 100%;
+        opacity: 0.7;
+      }
+
+      .squiggle-word:hover {
+        cursor: pointer;
+        color: #888; /* Change text color to red on hover */
+      }
+
+      .squiggle-word::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 6px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:none;}%3C/style%3E%3Cpath fill='none' stroke='%23AFEEEE' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+        background-position: 100% 100%;
+        background-size: auto 6px;
+        background-repeat: repeat-x;
+      }
+
+      @keyframes shift {
+        from {
+          background-position: 100% 100%;
+        }
+        to {
+          background-position: 0 100%;
+        }
+      }
+
+      .select-projects {
+        display: flex;
+        margin-left: 3rem; /* Reset margin to eliminate any default spacing */
+        padding-top: 6rem; /* Reset padding to eliminate any default spacing */
+        border: none; /* Reset border to eliminate any default border */
+        outline: none; /* Reset outline to eliminate any default outline */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      }
+
+      p#select_projects {
+        font-family: 'NeueMontreal-medium';
+        font-size: 1.2rem;
+      }
+
+      .footer {
+        margin-top: 2vw; /* Adjust as needed */
+        margin-left: 3rem;
+        max-width: calc(100% - 6rem); /* Set the maximum width with respect to left and right margins */
+        overflow: hidden;
+        position: relative;
+      }
+
+      .footer img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .footer-vertical {
+        margin-top: 2vw;
+        margin-left: 3rem;
+        max-width: calc(100% - 6rem); /* Set the maximum width with respect to left and right margins */
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-between; /* Add this line to distribute space between the images */
+      }
+
+      .footer-vertical img {
+        width: 49%; /* Adjust the percentage as needed to leave space for margins */
+        height: auto;
+        display: block;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      }
+
+    </style>
+</head>
+<body>
+  <div class="intro-logo">
+    <p id="intro_paragraph">
+      <span class="squiggle-word"><a href="index.html">Philip Ericsson</a></span>
+    </p>
+  </div>
+
+  <div class="select-projects">
+    <p id="select_projects">X SHORE | 100% ELECTRIC BOATS</p>
+  </div>
+  <div class="intro-container">
+    <p id="second_paragraph">
+      As part of a small but mighty engineering team, I had the pleasure of helping build the world's first high-performance electric boat. Launching in 2020 from our tiny engineering shop and headquarters in Stockholm, Sweden.
+    </p>
+  </div>
+
+  <div class="footer-vertical">
+    <img src="images/eelexaft.png" alt="Eelex">
+    <img src="images/eelexspeed.png" alt="Second Image">
+  </div>
+</body>
+</html>

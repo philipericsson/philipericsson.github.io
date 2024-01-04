@@ -78,9 +78,9 @@
         opacity: 0.7;
       }
 
-      .squiggle-word:hover {
+      .squiggle-word:not(.no-hover):hover {
         cursor: pointer;
-        color: #888; /* Change text color to red on hover */
+        color: #888;
       }
 
       .squiggle-word::after {
@@ -95,6 +95,8 @@
         background-size: auto 6px;
         background-repeat: repeat-x;
       }
+
+      
 
       @keyframes shift {
         from {
@@ -143,6 +145,12 @@
         display: block;
       }
 
+      .footer video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
+      }
+
       .footer-vertical {
         margin-top: 2vw;
         margin-left: 3rem;
@@ -174,17 +182,29 @@
   </div>
   <div class="intro-container">
     <p id="second_paragraph">
-      To combat the phenomenon of electric vehicle range anxiety, I built a tool to visualize available range for our two models. I integrated our proprietary range algorithms with the Google Maps API to maximize usability. From initial ideation to deployment.
+      To combat the phenomenon of electric vehicle <span class="squiggle-word no-hover"><a>range anxiety</a></span>, I built a tool to visualize available range for our two models. <br>From initial ideation to deployment.
     </p>
   </div>
 
-  <!-- <div class="footer">
-    <img src="images/xs1sea.JPG" alt="X Shore 1" loading="lazy">
-  </div> -->
+  <div class="footer">
+    <video autoplay loop muted>
+      <source src="videos/trimmedrange.mp4" type="video/mp4">
+      <!-- Add additional source elements for different video formats (WebM, Ogg) if needed -->
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="footer">
+    <img src="images/range_integration.png" alt="Range Map" loading="lazy">
+  </div>
 
   <div class="footer-vertical">
-    <!-- <img src="images/IMG_1221.jpg" alt="Philip line" loading="lazy"> -->
     <img src="images/IMG_1229.jpg" alt="Philip throwing" loading="lazy">
+    <div class="intro-container">
+      <p id="second_paragraph">
+        I integrated our proprietary range estimation algorithms with the Google Maps API to maximize usability. The app was developed using Vue JS. <br>Several stakeholders, from engineering to management to marketing, gave frequent input on this solo project.
+      </p>
+    </div>
   </div> 
 </body>
 </html>

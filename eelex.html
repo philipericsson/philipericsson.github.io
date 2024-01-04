@@ -25,9 +25,9 @@
 
       .intro-logo {
         display: flex;
-        max-width: 62vw;
+        max-width: 65%;
         margin-top: 2rem;
-        margin-left: 3rem; /* Reset margin to eliminate any default spacing */
+        margin-left: 4rem; /* Reset margin to eliminate any default spacing */
         padding: 0; /* Reset padding to eliminate any default spacing */
         border: none; /* Reset border to eliminate any default border */
         outline: none; /* Reset outline to eliminate any default outline */
@@ -36,8 +36,8 @@
 
       .intro-container {
         display: flex;
-        max-width: 62vw;
-        margin-left: 3rem; /* Reset margin to eliminate any default spacing */
+        max-width: 65%;
+        margin-left: 4rem; /* Reset margin to eliminate any default spacing */
         padding: 0; /* Reset padding to eliminate any default spacing */
         border: none; /* Reset border to eliminate any default border */
         outline: none; /* Reset outline to eliminate any default outline */
@@ -107,7 +107,7 @@
 
       .select-projects {
         display: flex;
-        margin-left: 3rem; /* Reset margin to eliminate any default spacing */
+        margin-left: 4rem; /* Reset margin to eliminate any default spacing */
         padding-top: 6rem; /* Reset padding to eliminate any default spacing */
         border: none; /* Reset border to eliminate any default border */
         outline: none; /* Reset outline to eliminate any default outline */
@@ -126,13 +126,13 @@
 
       p#select_projects {
         font-family: 'NeueMontreal-medium';
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       .footer {
         margin-top: 2vw; /* Adjust as needed */
-        margin-left: 3rem;
-        max-width: calc(100% - 6rem); /* Set the maximum width with respect to left and right margins */
+        margin-left: 4rem;
+        max-width: calc(100% - 8rem); /* Set the maximum width with respect to left and right margins */
         overflow: hidden;
         position: relative;
       }
@@ -145,8 +145,8 @@
 
       .footer-vertical {
         margin-top: 2vw;
-        margin-left: 3rem;
-        max-width: calc(100% - 6rem); /* Set the maximum width with respect to left and right margins */
+        margin-left: 4rem;
+        max-width: calc(100% - 8rem); /* Set the maximum width with respect to left and right margins */
         overflow: hidden;
         position: relative;
         display: flex;
@@ -160,6 +160,63 @@
         box-sizing: border-box; /* Include padding and border in the element's total width and height */
       }
 
+      @media only screen and (max-width: 600px) {
+        .intro-logo,
+        .intro-container,
+        .select-projects {
+          max-width: 100%;
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+
+        p#intro_paragraph,
+        p#second_paragraph {
+          font-size: 1.8rem;
+          margin-top: 0rem;
+        }
+
+        p#select_projects {
+          font-size: 0.85rem;
+          margin-top: 0rem;
+        }
+
+        .select-projects {
+          padding-top: 3rem;
+        }
+
+        .footer {
+          margin-top: 2vw;
+          margin-left: 1rem; /* Adjust margin for small screens */
+          max-width: calc(100% - 2rem); /* Set the maximum width with respect to left and right margins */
+          overflow: hidden;
+          position: relative;
+        }
+
+        .footer img {
+          width: 100%;
+          height: auto;
+          display: block;
+          box-sizing: border-box;
+          margin-top: 2vw; /* Add margin between images */
+        }
+
+        .footer-vertical {
+          margin-top: 2vw;
+          margin-left: 1rem; /* Adjust margin for small screens */
+          max-width: calc(100% - 2rem); /* Set the maximum width with respect to left and right margins */
+          overflow: hidden;
+          position: relative;
+          display: block; /* Display images as block to stack them vertically */
+        }
+
+        .footer-vertical img {
+          width: 100%; /* Set image width to 100% for small screens */
+          height: auto;
+          display: block;
+          box-sizing: border-box; /* Include padding and border in the element's total width and height */
+          margin-top: 2vw; /* Add margin between images */
+        }
+      }
     </style>
 </head>
 <body>

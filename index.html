@@ -114,6 +114,7 @@
         display: flex;
         flex-direction: column;
         margin-left: 4rem;
+        margin-right: 4rem;
         padding-top: 4rem;
         border: none;
         outline: none;
@@ -150,8 +151,15 @@
         z-index: 1; /* Set a higher z-index value */
       }
 
-      .project-row:hover {
-        background-color: #AFEEEE; /* Change background color on hover */
+      .project-row:hover::before {
+        content: "";
+        position: absolute;
+        top: 38%;
+        left: -15%;
+        width: 130%;
+        height: 98%;
+        background-color: #AFEEEE;
+        z-index: 0;
       }
 
       .project-row:hover .image-container {
@@ -173,7 +181,7 @@
         cursor: pointer;
       }
 
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 700px) {
         .intro-container {
           max-width: 100%;
           margin-left: 1rem;
@@ -190,10 +198,34 @@
         .project-row {
           margin-left: 1rem;
           padding-top: 3rem;
+          margin-right: 1rem;
         }
 
         .project-title {
           font-size: 1rem;
+        }
+
+        p#select_projects {
+          font-size: 1rem;
+        }
+        
+        .project-title {
+          font-size: 1rem;
+        }
+
+        .project-row:hover::before {
+          content: "";
+          position: absolute;
+          top: 38%;
+          left: -6%;
+          width: 124%;
+          height: 98%;
+          background-color: #AFEEEE;
+          z-index: 0;
+        }
+
+        .line {
+          margin-top: 1rem;
         }
 
         .image-container {
@@ -201,7 +233,6 @@
           height: 200px;
         }
       }
-
     </style>
 </head>
 <body>
@@ -225,7 +256,6 @@
       </div>
     </a>
     <div class="line"></div>
-
 
     <a href="xs1.html" class="project-link">
       <div class="project-row">

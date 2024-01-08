@@ -183,6 +183,14 @@
       }
 
       @media only screen and (max-width: 700px) {
+        .project-row:hover::before {
+          content: none; /* Disable the hover effect on smaller screens */
+        }
+
+        .project-row:hover .image-container {
+          display: none; /* Hide the image container on smaller screens */
+        }
+        
         .intro-container {
           max-width: 100%;
           margin-left: 1rem;

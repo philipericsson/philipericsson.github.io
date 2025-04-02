@@ -11,7 +11,8 @@ p#intro_paragraph {
 p#second_paragraph {
   line-height: var(--line-height-normal);
   font-size: var(--font-size-large);
-  margin-top: var(--spacing-large);
+  margin-top: 2rem; /* Moderate space above the concluding paragraph */
+  margin-bottom: 2rem; /* Matching space below for symmetry */
   font-family: var(--font-light);
 }
 
@@ -28,6 +29,7 @@ p#select_projects {
   flex-direction: column;
   margin: 0; /* Remove margins to allow full width */
   padding: 0; /* Remove padding */
+  margin-top: 0; /* Reset margin-top */
   box-sizing: border-box;
   /* Add a container for the hover effect */
   overflow: visible;
@@ -35,6 +37,12 @@ p#select_projects {
 }
 
 /* Fixed the hover effect to be properly contained between lines */
+/* Add space between section headers and project components */
+.select-projects + .project-link {
+  margin-top: 1rem; /* Add space specifically after section headers */
+  display: block;
+}
+
 /* Project link styles */
 
 .project-row::before {

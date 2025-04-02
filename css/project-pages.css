@@ -1,0 +1,27 @@
+/* Project Detail Pages Specific Styles */
+
+/* Adjust spacing between title and first paragraph for project pages */
+.project-page .select-projects {
+  padding-top: 3rem; /* Reduced spacing for project pages */
+  margin-top: 0;
+}
+
+.project-page .intro-container {
+  margin-top: 1.5rem; /* Reduced spacing for project pages */
+}
+
+/* Adjust footer-vertical spacing for project pages */
+.project-page .footer-vertical {
+  gap: 0.5rem; /* Tighter spacing between images */
+}
+
+/* Mobile adjustments for project pages */
+@media only screen and (max-width: 700px) {
+  .project-page .select-projects {
+    padding-top: 2rem;
+  }
+  
+  .project-page .intro-container {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,18 @@
+/* Font Declarations */
+@font-face {
+  font-family: 'NeueMontreal-book';
+  src: url('../fonts/ppneuemontreal-book.otf') format('opentype');
+  font-display: swap; /* Improve font loading performance */
+}
+
+@font-face {
+  font-family: 'NeueMontreal-medium';
+  src: url('../fonts/ppneuemontreal-medium.otf') format('opentype');
+  font-display: swap; /* Improve font loading performance */
+}
+
+@font-face {
+  font-family: 'Quicksand-Light';
+  src: url('../fonts/Quicksand-Light.ttf') format('truetype');
+  font-display: swap; /* Improve font loading performance */
+}

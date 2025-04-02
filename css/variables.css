@@ -1,0 +1,31 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --primary-color: #AFEEEE;
+  --text-color: #000;
+  --hover-text-color: #888;
+  --background-color: #FFFFFF;
+  
+  /* Typography */
+  --font-primary: 'NeueMontreal-book', sans-serif;
+  --font-medium: 'NeueMontreal-medium', sans-serif;
+  --font-light: 'Quicksand-Light', sans-serif;
+  
+  /* Font Sizes */
+  --font-size-large: 2.6rem;
+  --font-size-medium: 1.4rem;
+  --font-size-small: 1rem;
+  
+  /* Spacing */
+  --spacing-large: 4rem;
+  --spacing-medium: 2rem;
+  --spacing-small: 1rem;
+  
+  /* Line Heights */
+  --line-height-normal: 1.4;
+  
+  /* Z-index layers */
+  --z-index-base: 0;
+  --z-index-hover: 1;
+  --z-index-overlay: 2;
+}

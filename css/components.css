@@ -1,0 +1,178 @@
+/* Component Styles */
+@import 'variables.css';
+
+/* Typography components */
+p#intro_paragraph {
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-large);
+  font-family: var(--font-light);
+}
+
+p#second_paragraph {
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-large);
+  margin-top: var(--spacing-large);
+  font-family: var(--font-light);
+}
+
+p#select_projects {
+  font-family: var(--font-medium);
+  font-size: var(--font-size-medium);
+  margin-bottom: -0.1rem;
+}
+
+/* Project components */
+.project-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Remove margins to allow full width */
+  padding: 0; /* Remove padding */
+  box-sizing: border-box;
+  /* Add a container for the hover effect */
+  overflow: visible;
+  height: 4rem; /* Set a fixed height for the project row */
+}
+
+/* Fixed the hover effect to be properly contained between lines */
+/* Project link styles */
+
+.project-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100vw; /* Extend far to the left */
+  right: -100vw; /* Extend far to the right */
+  bottom: 0;
+  width: 200vw; /* Make it extremely wide */
+  background-color: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: var(--z-index-hover-bg);
+}
+
+.project-row:hover::before {
+  opacity: 1;
+}
+
+.project-title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-medium);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-index-hover);
+  padding-left: var(--spacing-large); /* Add padding to match original layout */
+  pointer-events: none; /* Ensures hover works properly on the entire row */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.line {
+  position: absolute;
+  left: -100vw; /* Extend far to the left */
+  right: -100vw; /* Extend far to the right */
+  border-top: 1px solid var(--text-color);
+  top: 0; /* Position at the top */
+  width: 200vw; /* Make it extremely wide */
+  z-index: var(--z-index-base);
+}
+
+.line-bottom {
+  position: absolute;
+  left: -100vw; /* Extend far to the left */
+  right: -100vw; /* Extend far to the right */
+  border-top: 1px solid var(--text-color);
+  bottom: 0; /* Position at the bottom */
+  width: 200vw; /* Make it extremely wide */
+  z-index: var(--z-index-base);
+}
+
+/* Image components with improved loading */
+.image-container {
+  position: absolute;
+  top: -80%;
+  right: 15%;
+  width: 280px;
+  height: 320px;
+  overflow: hidden;
+  display: none;
+  z-index: var(--z-index-overlay);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-row:hover .image-container {
+  display: block;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Add image loading improvements */
+  will-change: transform; /* Hint to browser for optimization */
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  margin: 0; /* Remove all margins */
+  padding: 0; /* Remove all padding */
+}
+
+.project-link + .project-link .line {
+  display: none; /* Hide top line of adjacent projects */
+}
+
+.project-link:hover {
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 700px) {
+  p#intro_paragraph,
+  p#second_paragraph {
+    font-size: var(--font-size-large);
+    margin-top: 0;
+  }
+
+  .select-projects {
+    margin-left: var(--spacing-small);
+    padding-top: 3rem;
+    margin-right: var(--spacing-small);
+  }
+  
+  .project-title {
+    padding-left: var(--spacing-small);
+  }
+
+  .project-title,
+  p#select_projects {
+    font-size: var(--font-size-small);
+  }
+
+  .project-row:hover::before {
+    /* Adjusted for mobile to ensure proper positioning */
+    left: -6%;
+    width: 112%;
+  }
+
+  .line {
+    margin-top: 1rem;
+  }
+
+  .image-container {
+    width: 180px;
+    height: 200px;
+  }
+  
+  /* Disable hover effects on small screens for better performance */
+  .project-row:hover::before {
+    content: none;
+  }
+
+  .project-row:hover .image-container {
+    display: none;
+  }
+}

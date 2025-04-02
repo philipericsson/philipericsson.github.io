@@ -1,0 +1,104 @@
+/* Layout Styles */
+@import 'variables.css';
+
+/* Container layouts */
+.intro-container {
+  display: flex;
+  max-width: 65%;
+  margin-top: var(--spacing-large);
+  margin-left: var(--spacing-large);
+  box-sizing: border-box;
+}
+
+.intro-logo {
+  display: flex;
+  max-width: 65%;
+  margin-top: var(--spacing-medium);
+  margin-left: var(--spacing-large);
+  box-sizing: border-box;
+}
+
+/* Section headers */
+.select-projects {
+  display: flex;
+  margin-left: var(--spacing-large);
+  padding-top: var(--spacing-large);
+  margin-top: 1rem; /* Add more space above section headers */
+  margin-bottom: 0; /* Remove space below section headers */
+  box-sizing: border-box;
+}
+
+/* Footer layouts */
+.footer {
+  margin-top: 2vw;
+  margin-left: var(--spacing-large);
+  max-width: calc(100% - 8rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.footer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-vertical {
+  margin-top: 2vw;
+  margin-left: var(--spacing-large);
+  max-width: calc(100% - 8rem);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem; /* Reduce gap between images */
+  margin-bottom: 3rem; /* Add bottom margin for spacing at the bottom of the page */
+}
+
+.footer-vertical img {
+  width: 49%; /* Increase width to reduce space between images */
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+  margin: 0; /* Remove margin to eliminate extra spacing */
+}
+
+/* Responsive layouts */
+@media only screen and (max-width: 700px) {
+  .intro-logo,
+  .intro-container,
+  .select-projects {
+    max-width: 100%;
+    margin-left: var(--spacing-small);
+    margin-right: var(--spacing-small);
+  }
+  
+  .select-projects {
+    margin-bottom: 1rem; /* Add space below section headers on mobile */
+  }
+
+  .select-projects {
+    padding-top: 3rem;
+  }
+
+  .footer {
+    margin-top: 2vw;
+    margin-left: var(--spacing-small);
+    max-width: calc(100% - 2rem);
+  }
+
+  .footer-vertical {
+    margin-top: 2vw;
+    margin-left: var(--spacing-small);
+    max-width: calc(100% - 2rem);
+    display: block;
+  }
+
+  .footer-vertical img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 2vw;
+  }
+}

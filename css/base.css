@@ -48,24 +48,34 @@ a {
   right: 0;
   bottom: 0;
   height: 6px;
+  /* Define a fixed-size squiggle pattern (20px width) that repeats */
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:none;}%3C/style%3E%3Cpath fill='none' stroke='%23AFEEEE' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-  background-position: 100% 100%;
-  background-size: auto 6px;
+  background-position: 0 100%;
   background-repeat: repeat-x;
+  background-size: 20px 6px;  /* Fixed size pattern */
 }
 
 .squiggle-word:hover::after {
-  animation: shift 2s linear infinite;
-  background-position: 0 100%;
+  /* Move exactly 20px in 0.6s - faster animation speed */
+  animation: squiggle-move 0.6s linear infinite;
   opacity: 0.7;
 }
 
-@keyframes shift {
-  from {
-    background-position: 100% 100%;
-  }
+/* For elements with no-hover class, keep animation but remove click affordances */
+.squiggle-word.no-hover:hover {
+  cursor: text; /* Use default text cursor instead of pointer */
+  color: inherit; /* Keep original text color, don't change on hover */
+}
+
+/* Ensure animation still happens for no-hover elements */
+.squiggle-word.no-hover:hover::after {
+  animation: squiggle-move 0.6s linear infinite; /* Keep the animation with consistent speed */
+}
+
+@keyframes squiggle-move {
   to {
-    background-position: 0 100%;
+    /* Move exactly one pattern width per animation cycle */
+    background-position: -20px 100%;
   }
 }
 
@@ -74,5 +84,23 @@ a {
   :root {
     --font-size-large: 1.8rem;
     --spacing-large: 1rem;
+  }
+  
+  /* Mobile-specific squiggle behavior - simplified approach */
+  /* 1. Always show animated squiggles for all elements on mobile */
+  .squiggle-word::after {
+    opacity: 0.7;
+    animation: squiggle-move 0.6s linear infinite;
+  }
+  
+  /* On mobile, all elements have the same text color */
+  .squiggle-word a, .squiggle-word:not(.no-hover) a {
+    color: inherit; /* Keep original text color for all links */
+  }
+  
+  /* 3. Override any hover effects that might interfere with our mobile styles */
+  .squiggle-word:hover::after,
+  .squiggle-word.no-hover:hover::after {
+    animation: squiggle-move 0.6s linear infinite; /* Ensure animation always runs */
   }
 }

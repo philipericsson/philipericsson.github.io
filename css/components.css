@@ -1,0 +1,362 @@
+/* Component Styles */
+@import 'variables.css';
+
+/* Typography components */
+p#intro_paragraph {
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-large);
+  font-family: var(--font-light);
+}
+
+p#second_paragraph {
+  line-height: var(--line-height-normal); /* Match intro paragraph */
+  font-size: var(--font-size-large); /* Match intro paragraph */
+  margin-top: 2rem; /* Adjusted spacing above bio paragraph */
+  margin-bottom: 1.5rem; /* Reduced bottom spacing */
+  font-family: var(--font-light); /* Match intro paragraph */
+}
+
+h2#select_projects {
+  font-family: var(--font-medium);
+  font-size: var(--font-size-medium);
+  margin-bottom: -0.1rem;
+  font-weight: normal; /* Keep the same weight as before */
+  margin-top: 0; /* Reset default heading margin */
+}
+
+h2#select_projects a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+h2#select_projects a:hover {
+  color: var(--hover-text-color);
+}
+
+/* Project components */
+.project-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Remove margins to allow full width */
+  padding: 0; /* Remove padding */
+  margin-top: 0; /* Reset margin-top */
+  box-sizing: border-box;
+  overflow: visible;
+  height: 4rem; /* Set a fixed height for the project row */
+  padding-left: var(--spacing-large); /* Match original left padding */
+}
+
+/* Fixed the hover effect to be properly contained between lines */
+/* Add space between section headers and project components */
+h2#select_projects + .project-link {
+  margin-top: 0.75rem; /* Precise spacing after section headers */
+  display: block;
+}
+
+/* Project category spacing control */
+.project-category {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset h2 element margins */
+h2#select_projects {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+
+
+/* Project link styles */
+
+.project-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100vw; /* Extend far to the left */
+  right: -100vw; /* Extend far to the right */
+  bottom: 0;
+  width: 200vw; /* Make it extremely wide */
+  background-color: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: var(--z-index-hover-bg);
+}
+
+/* This rule ensures the text color doesn't change on hover */
+.project-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.project-row:hover::before {
+  opacity: 1;
+}
+
+/* Project title styling exactly matching original design */
+.project-title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-medium);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-index-hover);
+  margin: 0;
+  padding: 0;
+  pointer-events: none; /* Ensures hover works properly on the entire row */
+  white-space: nowrap; /* Prevent text wrapping */
+  color: var(--text-color);
+}
+
+.line {
+  position: relative;
+  display: block;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-1 * (100vw - 100%) / 2); /* Center the line by pulling it leftward */
+  border-bottom: 1px solid var(--text-color);
+  z-index: var(--z-index-base);
+  box-sizing: content-box;
+}
+
+.line-bottom {
+  position: relative;
+  display: block;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-1 * (100vw - 100%) / 2); /* Center the line by pulling it leftward */
+  border-bottom: 1px solid var(--text-color);
+  z-index: var(--z-index-base);
+  box-sizing: content-box;
+}
+
+/* Image components with improved loading */
+.image-container {
+  position: absolute;
+  top: -80%;
+  right: 15%;
+  width: 280px;
+  height: 320px;
+  overflow: hidden;
+  display: none;
+  z-index: var(--z-index-overlay);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-row:hover .image-container {
+  display: block;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Add image loading improvements */
+  will-change: transform; /* Hint to browser for optimization */
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  margin: 0; /* Remove all margins */
+  padding: 0; /* Remove all padding */
+}
+
+.project-link + .project-link .line {
+  display: none; /* Hide top line of adjacent projects */
+}
+
+.project-link:hover {
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+/* Medium breakpoint - Tablet/smaller desktop (701px-1024px) */
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  /* Typography scaling for main text elements */
+  p#intro_paragraph {
+    font-size: var(--font-size-large); /* Using medium breakpoint value */
+    line-height: 1.3;
+    margin-right: 2rem; /* Slightly reduced from desktop */
+  }
+  
+  /* Header styling (ENGINEERING, DESIGN, etc.) */
+  h2#select_projects {
+    font-size: var(--font-size-medium); /* Same as project titles */
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Project titles scaling */
+  .project-title {
+    font-size: var(--font-size-medium);
+  }
+  
+  /* Footer paragraph styling */
+  p#second_paragraph {
+    font-size: var(--font-size-large); /* Same as intro paragraph */
+    line-height: var(--line-height-normal);
+    margin-right: 2rem;
+  }
+  
+  /* Adjust project row hover effect for medium screens */
+  .project-row {
+    height: 3.5rem; /* Match the height in layout.css */
+  }
+  
+  /* Lines between projects */
+  .line {
+    margin: 0;
+  }
+  
+  /* Squiggle effects remain the same as desktop */
+}
+
+/* Small breakpoint - Mobile (<= 700px) */
+@media only screen and (max-width: 700px) {
+  /* COMPREHENSIVE TEXT ALIGNMENT FIX - SMALL SCREENS ONLY */
+  /* Reset all container elements to have zero left padding/margin */
+  .intro-container,
+  .select-projects,
+  .project-row,
+  footer.intro-container {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  /* Holistic mobile styling fix - apply padding to body instead */
+  body {
+    padding: 0 var(--spacing-small);
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  /* Remove any padding/margin from main containers */
+  main, header, footer {
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Reset text elements to align with edge */
+  p#intro_paragraph,
+  p#second_paragraph,
+  h2#select_projects {
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  /* Fix project title positioning */
+  p.project-title {
+    left: 0; /* Align with container edge */
+    padding-left: 0;
+    position: absolute; /* Keep absolute positioning for vertical centering */
+  }
+
+  /* Project row specific height/alignment */
+  .project-row {
+    height: 3rem; /* Reduce height to make lines closer together */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* Paragraph-specific styling, keeping alignment consistent */
+  p#intro_paragraph,
+  p#second_paragraph {
+    font-size: var(--font-size-medium);
+    margin-top: 0;
+    margin-right: 0;
+    line-height: 1.4;
+  }
+
+  /* Bio paragraph specific spacing for mobile */
+  footer.intro-container {
+    margin-top: 2.5rem; /* Match the space after header (2.5rem) */
+    margin-left: 0; /* Remove margin to prevent offset */
+    padding-left: 0; /* Remove container padding */
+  }
+
+  p#second_paragraph {
+    margin-top: 0; /* Remove top margin on mobile */
+    margin-bottom: 1rem; /* Reduced bottom margin */
+  }
+
+  .select-projects {
+    margin-left: var(--spacing-small);
+    padding-top: 3rem;
+    margin-right: 0; /* Remove right margin to match desktop asymmetric layout */
+  }
+  
+  .project-title {
+    position: static;
+    transform: none;
+    padding: 0;
+    text-align: left;
+    margin: 0;
+    /* Center the text vertically between lines */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%; /* Full width */
+  }
+
+  .project-title,
+  h2#select_projects {
+    font-size: var(--font-size-small);
+  }
+
+  .project-row:hover::before {
+    /* Adjusted for mobile to ensure proper positioning while matching desktop aesthetic */
+    left: -3%;
+    width: 106%;
+  }
+
+  .line {
+    margin-top: 0; /* Remove top margin to tighten spacing */
+    margin-bottom: 0; /* Remove bottom margin too */
+  }
+
+  .image-container {
+    width: 180px;
+    height: 200px;
+  }
+  
+  /* Reset mobile-specific line overrides - use desktop approach */
+  /* This simply removes our mobile overrides and lets desktop styling work properly */
+  .line,
+  .line-bottom {
+    /* Keep original desktop values */
+    width: 100vw;
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+    box-sizing: content-box;
+    position: relative;
+    display: block;
+    z-index: var(--z-index-base);
+  }
+
+  /* Reduce spacing between section headers and first line */
+  .select-projects {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Perfect vertical centering for project titles */
+  p.project-title {
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  /* Disable hover effects on small screens for better performance */
+  .project-row:hover::before {
+    content: none;
+  }
+
+  .project-row:hover .image-container {
+    display: none;
+  }
+}

@@ -1,0 +1,46 @@
+/* Project Detail Pages Specific Styles */
+
+/* Base spacing for project pages */
+.project-page .select-projects {
+  padding-top: 4rem; /* Increased spacing to match original design */
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* Space between title and content */
+}
+
+/* Specifically target both types of content containers that follow project titles */
+.project-page .intro-container {
+  margin-top: 0; /* Remove default margin */
+}
+
+.project-page .footer-vertical {
+  margin-top: 0; /* Remove default margin */
+  gap: 0.5rem; /* Spacing between items in flex container */
+}
+
+/* Directly target the paragraph spacing to ensure consistency */
+.project-page p#second_paragraph {
+  margin-top: 0; /* Ensure no extra spacing is added */
+}
+
+/* Medium breakpoint adjustments for project pages */
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  .project-page .select-projects {
+    padding-top: 3rem; /* Between desktop (4rem) and mobile (2rem) */
+    margin-bottom: 1.25rem; /* Between desktop and mobile spacing */
+  }
+}
+
+/* Mobile adjustments for project pages */
+@media only screen and (max-width: 700px) {
+  .project-page .select-projects {
+    padding-top: 2rem;
+    margin-bottom: 1rem; /* Reduced spacing for mobile */
+  }
+  
+  /* Ensure footer-vertical aligns with other elements in project pages on mobile */
+  .project-page .footer-vertical {
+    margin-left: 0; /* Remove left margin to align with other elements */
+    max-width: 100%; /* Use full width on mobile */
+    padding: 0; /* Remove padding to prevent double padding with body */
+  }
+}

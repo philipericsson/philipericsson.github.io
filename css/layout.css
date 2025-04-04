@@ -1,0 +1,255 @@
+/* Layout Styles */
+@import 'variables.css';
+
+/* Container layouts */
+.intro-container {
+  display: flex;
+  max-width: 65%;
+  margin-top: 0; /* Reset to 0 to avoid conflicts with project-pages.css */
+  margin-left: var(--spacing-large);
+  box-sizing: border-box;
+}
+
+/* Precise margin control for header element */
+header.intro-container {
+  margin: var(--spacing-large) 0 0 var(--spacing-large);
+}
+
+/* Precise control for main element spacing */
+main {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* Apply negative margin only to the index page main element */
+body:not(.project-page) main {
+  margin-top: -2rem; /* Negative margin only for index.html */
+}
+
+/* Add more space after the concluding paragraph - ORIGINAL STYLING RESTORED */
+.intro-container:last-of-type {
+  margin-bottom: 4rem;
+}
+
+/* Add more space above the footer - NEW STYLING */
+footer.intro-container {
+  margin-top: 3rem; /* Add more space above the footer to match header spacing */
+}
+
+.intro-logo {
+  display: flex;
+  max-width: 65%;
+  margin-top: var(--spacing-medium);
+  margin-left: var(--spacing-large);
+  box-sizing: border-box;
+}
+
+/* Section headers */
+.select-projects {
+  display: flex;
+  margin-left: var(--spacing-large);
+  padding-top: var(--spacing-large); /* Match original spacing */
+  margin-top: 0; /* Default spacing */
+  margin-bottom: 0.5rem; /* Add slight spacing below section headers */
+  box-sizing: border-box;
+}
+
+/* Control section spacing */
+section.project-category {
+  margin: 0;
+  padding: 0;
+}
+
+/* First project category should have less space above it */
+section.project-category:first-of-type .select-projects {
+  padding-top: 0; /* No extra padding for first category */
+}
+
+/* Footer layouts */
+.footer {
+  margin-top: 2vw;
+  margin-left: var(--spacing-large);
+  max-width: calc(100% - 8rem);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2vw; /* Add spacing between footer sections */
+}
+
+.footer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-vertical {
+  margin-top: 2vw; /* Match the consistent spacing between sections */
+  margin-left: var(--spacing-large);
+  max-width: calc(100% - 8rem);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row; /* Force side-by-side layout */
+  align-items: flex-start; /* Align items at the top */
+  justify-content: space-between; /* Use space-between for precise control */
+  gap: 0; /* Remove gap property as we're using space-between */
+  margin-bottom: 2vw; /* Match top margin for consistent vertical spacing */
+}
+
+.footer-vertical img {
+  width: 49%; /* Precisely calculated width to create proper spacing */
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensure proper image cropping */
+  box-sizing: border-box;
+  margin: 0; /* Remove margin to eliminate extra spacing */
+}
+
+.footer-vertical #second_paragraph {
+  width: 48%; /* Match image width for balanced layout */
+  margin: 0; /* Remove default margins */
+  flex-shrink: 0; /* Prevent text from shrinking */
+}
+
+/* Responsive layouts */
+/* Medium breakpoint - Tablet/smaller desktop (701px-1024px) */
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  /* Header area for medium screens */
+  header.intro-container {
+    margin: var(--spacing-medium) 0 var(--spacing-medium) 2rem;
+    max-width: 90%;
+  }
+  
+  /* Main container adjustments */
+  main {
+    margin-top: var(--spacing-medium);
+  }
+  
+  /* Adjust container margins proportionally for medium screens */
+  .intro-container,
+  .intro-logo,
+  .select-projects {
+    margin-left: 2rem !important; /* Force override of desktop styling */
+    max-width: 90%; /* Slightly narrower than desktop */
+  }
+  
+  /* Specific styling for section headers */
+  .select-projects {
+    padding-top: var(--spacing-medium); /* Scaled down from desktop */
+    margin-bottom: 0.75rem; /* Intermediate value */
+  }
+  
+  /* First section header gets more space after intro */
+  .select-projects:first-of-type {
+    padding-top: 2.75rem; /* Between desktop and mobile */
+  }
+  
+  /* Other section headers with medium spacing */
+  .select-projects:not(:first-of-type) {
+    padding-top: 3rem; /* Between desktop and mobile */
+  }
+  
+  /* Adjust project row height for medium screens */
+  .project-row {
+    height: 3.5rem; /* Between desktop (4rem) and mobile (3rem) */
+    padding-left: 2rem !important; /* Match the margin-left of section headers */
+  }
+  
+  /* Footer styling for medium screens */
+  footer.intro-container {
+    margin-top: 2.5rem; /* Between desktop and mobile */
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Footer sections on medium screens */
+  .footer, 
+  .footer-vertical {
+    margin-left: 2rem !important; /* Force override of desktop styling */
+    max-width: calc(100% - 4rem);
+    margin-top: 1.5vw; /* Slightly reduced from desktop */
+    margin-bottom: 1.5vw;
+  }
+  
+  /* Special adjustment for text-heavy sections with imbalanced text-image proportions */
+  .footer-vertical.text-heavy img {
+    width: 42%; /* Slightly reduce image width for better balance */
+  }
+  
+  .footer-vertical.text-heavy #second_paragraph {
+    width: 55%; /* Increase paragraph width */
+    font-size: 1.6em; /* Very slightly reduce font size for better proportionality */
+    line-height: 1.4; /* Slightly tighten line spacing for better proportionality */
+  }
+}
+
+/* Small breakpoint - Mobile (<= 700px) */
+@media only screen and (max-width: 700px) {
+  /* Override the desktop header margin for mobile */
+  header.intro-container {
+    margin-left: 0 !important; /* Force overriding the desktop styling */
+    margin-top: 1.5rem !important; /* Match footer's top spacing */
+    margin-bottom: 2.5rem !important; /* Increased space after header */
+  }
+
+  /* Override desktop margin for section headers */
+  .select-projects {
+    margin-left: 0 !important; /* Force overriding desktop styling */
+  }
+
+  /* Override desktop padding for project rows */
+  .project-row {
+    padding-left: 0 !important; /* Force overriding desktop styling */
+  }
+
+  .intro-logo,
+  .intro-container,
+  .select-projects {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    /* Remove padding from containers - will be applied to child elements */
+    padding-left: 0;
+    padding-right: var(--spacing-small);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* First section header - add spacing after header paragraph */
+  .select-projects:first-of-type {
+    padding-top: 2rem; /* Add space after intro paragraph */
+    margin-bottom: 0.5rem; /* Preserve existing inner spacing */
+  }
+
+  /* Other section headers need more top padding for better separation between categories */
+  .select-projects:not(:first-of-type) {
+    padding-top: 2.5rem; /* Increased space between different sections */
+    margin-bottom: 0.5rem; /* Preserve existing inner spacing */
+  }
+
+  .footer {
+    margin-top: 2vw;
+    margin-left: 0; /* Remove left margin to align with other elements */
+    max-width: 100%; /* Use full width on mobile */
+  }
+
+  .footer-vertical {
+    margin-top: 2vw;
+    margin-left: 0; /* Remove left margin to align with other elements */
+    max-width: 100%; /* Use full width on mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-vertical img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 0;
+  }
+
+  .footer-vertical #second_paragraph {
+    width: 100%;
+    margin: 0;
+  }
+}

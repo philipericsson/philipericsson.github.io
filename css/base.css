@@ -1,0 +1,117 @@
+/* Base Styles */
+@import 'variables.css';
+@import 'fonts.css';
+
+/* Reset and base styles */
+body {
+  background-color: var(--background-color);
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+}
+
+/* Typography */
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Squiggle underline effect */
+.squiggle-word {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.squiggle-word a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.squiggle-word:hover {
+  cursor: pointer;
+  color: var(--hover-text-color);
+}
+
+.squiggle-word::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  /* Define a fixed-size squiggle pattern (20px width) that repeats */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:none;}%3C/style%3E%3Cpath fill='none' stroke='%23AFEEEE' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 20px 6px;  /* Fixed size pattern */
+}
+
+.squiggle-word:hover::after {
+  /* Move exactly 20px in 0.6s - faster animation speed */
+  animation: squiggle-move 0.6s linear infinite;
+  opacity: 0.7;
+}
+
+/* For elements with no-hover class, keep animation but remove click affordances */
+.squiggle-word.no-hover:hover {
+  cursor: text; /* Use default text cursor instead of pointer */
+  color: inherit; /* Keep original text color, don't change on hover */
+}
+
+/* Ensure animation still happens for no-hover elements */
+.squiggle-word.no-hover:hover::after {
+  animation: squiggle-move 0.6s linear infinite; /* Keep the animation with consistent speed */
+}
+
+@keyframes squiggle-move {
+  to {
+    /* Move exactly one pattern width per animation cycle */
+    background-position: -20px 100%;
+  }
+}
+
+/* Responsive adjustments */
+/* Medium breakpoint - Tablet/smaller desktop (701px-1024px) */
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  :root {
+    --font-size-large: 2.2rem;  /* Between desktop and mobile sizes */
+    --font-size-medium: 1.3rem; /* Slightly smaller than desktop */
+    --spacing-large: 2.5rem;    /* Between desktop (4rem) and mobile (1rem) */
+    --spacing-medium: 1.5rem;   /* Adjusted proportionally */
+  }
+}
+
+/* Small breakpoint - Mobile (<= 700px) */
+@media only screen and (max-width: 700px) {
+  :root {
+    --font-size-large: 1.8rem;
+    --spacing-large: 1rem;
+  }
+  
+  /* Mobile-specific squiggle behavior - simplified approach */
+  /* 1. Always show animated squiggles for all elements on mobile */
+  .squiggle-word::after {
+    opacity: 0.7;
+    animation: squiggle-move 0.6s linear infinite;
+  }
+  
+  /* On mobile, all elements have the same text color */
+  .squiggle-word a, .squiggle-word:not(.no-hover) a {
+    color: inherit; /* Keep original text color for all links */
+  }
+  
+  /* 3. Override any hover effects that might interfere with our mobile styles */
+  .squiggle-word:hover::after,
+  .squiggle-word.no-hover:hover::after {
+    animation: squiggle-move 0.6s linear infinite; /* Ensure animation always runs */
+  }
+}

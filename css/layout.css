@@ -156,14 +156,14 @@ section.project-category:first-of-type .select-projects {
 
   .footer {
     margin-top: 2vw;
-    margin-left: var(--spacing-small);
-    max-width: calc(100% - 2rem);
+    margin-left: 0; /* Remove left margin to align with other elements */
+    max-width: 100%; /* Use full width on mobile */
   }
 
   .footer-vertical {
     margin-top: 2vw;
-    margin-left: var(--spacing-small);
-    max-width: calc(100% - 2rem);
+    margin-left: 0; /* Remove left margin to align with other elements */
+    max-width: 100%; /* Use full width on mobile */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;

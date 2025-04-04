@@ -28,4 +28,11 @@
     padding-top: 2rem;
     margin-bottom: 1rem; /* Reduced spacing for mobile */
   }
+  
+  /* Ensure footer-vertical aligns with other elements in project pages on mobile */
+  .project-page .footer-vertical {
+    margin-left: 0; /* Remove left margin to align with other elements */
+    max-width: 100%; /* Use full width on mobile */
+    padding: 0; /* Remove padding to prevent double padding with body */
+  }
 }

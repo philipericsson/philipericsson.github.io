@@ -22,6 +22,14 @@
   margin-top: 0; /* Ensure no extra spacing is added */
 }
 
+/* Medium breakpoint adjustments for project pages */
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  .project-page .select-projects {
+    padding-top: 3rem; /* Between desktop (4rem) and mobile (2rem) */
+    margin-bottom: 1.25rem; /* Between desktop and mobile spacing */
+  }
+}
+
 /* Mobile adjustments for project pages */
 @media only screen and (max-width: 700px) {
   .project-page .select-projects {

@@ -11,12 +11,12 @@
   --font-medium: 'NeueMontreal-medium', sans-serif;
   --font-light: 'Quicksand-Light', sans-serif;
   
-  /* Font Sizes */
+  /* Font Sizes - Desktop (>1024px) */
   --font-size-large: 2.6rem;
   --font-size-medium: 1.4rem;
   --font-size-small: 1rem;
   
-  /* Spacing */
+  /* Spacing - Desktop (>1024px) */
   --spacing-large: 4rem;
   --spacing-medium: 2rem;
   --spacing-small: 1rem;

@@ -112,6 +112,66 @@ section.project-category:first-of-type .select-projects {
 }
 
 /* Responsive layouts */
+/* Medium breakpoint - Tablet/smaller desktop (701px-1024px) */
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  /* Header area for medium screens */
+  header.intro-container {
+    margin: var(--spacing-medium) 0 var(--spacing-medium) 2rem;
+    max-width: 90%;
+  }
+  
+  /* Main container adjustments */
+  main {
+    margin-top: var(--spacing-medium);
+  }
+  
+  /* Adjust container margins proportionally for medium screens */
+  .intro-container,
+  .intro-logo,
+  .select-projects {
+    margin-left: 2rem !important; /* Force override of desktop styling */
+    max-width: 90%; /* Slightly narrower than desktop */
+  }
+  
+  /* Specific styling for section headers */
+  .select-projects {
+    padding-top: var(--spacing-medium); /* Scaled down from desktop */
+    margin-bottom: 0.75rem; /* Intermediate value */
+  }
+  
+  /* First section header gets more space after intro */
+  .select-projects:first-of-type {
+    padding-top: 2.75rem; /* Between desktop and mobile */
+  }
+  
+  /* Other section headers with medium spacing */
+  .select-projects:not(:first-of-type) {
+    padding-top: 3rem; /* Between desktop and mobile */
+  }
+  
+  /* Adjust project row height for medium screens */
+  .project-row {
+    height: 3.5rem; /* Between desktop (4rem) and mobile (3rem) */
+    padding-left: 2rem !important; /* Match the margin-left of section headers */
+  }
+  
+  /* Footer styling for medium screens */
+  footer.intro-container {
+    margin-top: 2.5rem; /* Between desktop and mobile */
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Footer sections on medium screens */
+  .footer, 
+  .footer-vertical {
+    margin-left: 2rem !important; /* Force override of desktop styling */
+    max-width: calc(100% - 4rem);
+    margin-top: 1.5vw; /* Slightly reduced from desktop */
+    margin-bottom: 1.5vw;
+  }
+}
+
+/* Small breakpoint - Mobile (<= 700px) */
 @media only screen and (max-width: 700px) {
   /* Override the desktop header margin for mobile */
   header.intro-container {

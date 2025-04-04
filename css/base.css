@@ -80,6 +80,17 @@ a {
 }
 
 /* Responsive adjustments */
+/* Medium breakpoint - Tablet/smaller desktop (701px-1024px) */
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+  :root {
+    --font-size-large: 2.2rem;  /* Between desktop and mobile sizes */
+    --font-size-medium: 1.3rem; /* Slightly smaller than desktop */
+    --spacing-large: 2.5rem;    /* Between desktop (4rem) and mobile (1rem) */
+    --spacing-medium: 1.5rem;   /* Adjusted proportionally */
+  }
+}
+
+/* Small breakpoint - Mobile (<= 700px) */
 @media only screen and (max-width: 700px) {
   :root {
     --font-size-large: 1.8rem;

@@ -116,7 +116,7 @@ h2#select_projects {
   display: block;
   width: 100vw; /* Full viewport width */
   margin-left: calc(-1 * (100vw - 100%) / 2); /* Center the line by pulling it leftward */
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
   z-index: var(--z-index-base);
   box-sizing: content-box;
 }
@@ -126,7 +126,7 @@ h2#select_projects {
   display: block;
   width: 100vw; /* Full viewport width */
   margin-left: calc(-1 * (100vw - 100%) / 2); /* Center the line by pulling it leftward */
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
   z-index: var(--z-index-base);
   box-sizing: content-box;
 }

@@ -169,6 +169,17 @@ section.project-category:first-of-type .select-projects {
     margin-top: 1.5vw; /* Slightly reduced from desktop */
     margin-bottom: 1.5vw;
   }
+  
+  /* Special adjustment for text-heavy sections with imbalanced text-image proportions */
+  .footer-vertical.text-heavy img {
+    width: 42%; /* Slightly reduce image width for better balance */
+  }
+  
+  .footer-vertical.text-heavy #second_paragraph {
+    width: 55%; /* Increase paragraph width */
+    font-size: 1.6em; /* Very slightly reduce font size for better proportionality */
+    line-height: 1.4; /* Slightly tighten line spacing for better proportionality */
+  }
 }
 
 /* Small breakpoint - Mobile (<= 700px) */

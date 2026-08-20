@@ -8,7 +8,7 @@ p#intro_paragraph {
   font-family: var(--font-light);
 }
 
-p#second_paragraph {
+p.body-paragraph {
   line-height: var(--line-height-normal); /* Match intro paragraph */
   font-size: var(--font-size-large); /* Match intro paragraph */
   margin-top: 2rem; /* Adjusted spacing above bio paragraph */
@@ -16,7 +16,7 @@ p#second_paragraph {
   font-family: var(--font-light); /* Match intro paragraph */
 }
 
-h2#select_projects {
+h2.category-heading {
   font-family: var(--font-medium);
   font-size: var(--font-size-medium);
   margin-bottom: -0.1rem;
@@ -24,13 +24,13 @@ h2#select_projects {
   margin-top: 0; /* Reset default heading margin */
 }
 
-h2#select_projects a {
+h2.category-heading a {
   color: inherit;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-h2#select_projects a:hover {
+h2.category-heading a:hover {
   color: var(--hover-text-color);
 }
 
@@ -50,7 +50,7 @@ h2#select_projects a:hover {
 
 /* Fixed the hover effect to be properly contained between lines */
 /* Add space between section headers and project components */
-h2#select_projects + .project-link {
+h2.category-heading + .project-link {
   margin-top: 0.75rem; /* Precise spacing after section headers */
   display: block;
 }
@@ -62,7 +62,7 @@ h2#select_projects + .project-link {
 }
 
 /* Reset h2 element margins */
-h2#select_projects {
+h2.category-heading {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: normal;
@@ -184,7 +184,7 @@ h2#select_projects {
   }
   
   /* Header styling (ENGINEERING, DESIGN, etc.) */
-  h2#select_projects {
+  h2.category-heading {
     font-size: var(--font-size-medium); /* Same as project titles */
     line-height: 1.2;
     margin-bottom: 0.25rem;
@@ -196,7 +196,7 @@ h2#select_projects {
   }
   
   /* Footer paragraph styling */
-  p#second_paragraph {
+  p.body-paragraph {
     font-size: var(--font-size-large); /* Same as intro paragraph */
     line-height: var(--line-height-normal);
     margin-right: 2rem;
@@ -243,8 +243,8 @@ h2#select_projects {
 
   /* Reset text elements to align with edge */
   p#intro_paragraph,
-  p#second_paragraph,
-  h2#select_projects {
+  p.body-paragraph,
+  h2.category-heading {
     padding-left: 0;
     margin-left: 0;
     text-align: left;
@@ -267,7 +267,7 @@ h2#select_projects {
 
   /* Paragraph-specific styling, keeping alignment consistent */
   p#intro_paragraph,
-  p#second_paragraph {
+  p.body-paragraph {
     font-size: var(--font-size-medium);
     margin-top: 0;
     margin-right: 0;
@@ -281,7 +281,7 @@ h2#select_projects {
     padding-left: 0; /* Remove container padding */
   }
 
-  p#second_paragraph {
+  p.body-paragraph {
     margin-top: 0; /* Remove top margin on mobile */
     margin-bottom: 1rem; /* Reduced bottom margin */
   }
@@ -306,7 +306,7 @@ h2#select_projects {
   }
 
   .project-title,
-  h2#select_projects {
+  h2.category-heading {
     font-size: var(--font-size-small);
   }
 

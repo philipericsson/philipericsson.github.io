@@ -18,7 +18,7 @@
 }
 
 /* Directly target the paragraph spacing to ensure consistency */
-.project-page p#second_paragraph {
+.project-page p.body-paragraph {
   margin-top: 0; /* Ensure no extra spacing is added */
 }
 

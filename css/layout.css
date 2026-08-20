@@ -76,7 +76,8 @@ section.project-category:first-of-type .select-projects {
   margin-bottom: 2vw; /* Add spacing between footer sections */
 }
 
-.footer img {
+.footer img,
+.footer video {
   width: 100%;
   height: auto;
   display: block;
